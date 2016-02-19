@@ -106,8 +106,11 @@ $('#submit').on('click',function(){
     		type : 'POST',
     		data : {'villageid':villageID},
     		url : '/planit/village',
-    		success :   function(data){
-                //	$('#addreceiptddsmember').val(data);
+    		success :   function(response){
+			if( response.status === true )
+            			document.location.href = response.redirect;
+        		else 
+            		        $('#show_id').html("<div style='border:1px solid red;font-size: 11px;margin:0 auto !important;'>"+response.error+"</div>");                	
     		}
 		});
 	} else {

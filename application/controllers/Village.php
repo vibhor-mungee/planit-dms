@@ -16,10 +16,13 @@ class village extends CI_Controller {
         }
 
         public function index(){
-                $data['page_title'] = 'Village';
-		$data['village_id'] = $this->input->POST('villageid');
-                //$data['state_names'] = $this->get_states();
-                //$this->template->addJS(base_url('assets/js/dd_script.js'));
-                $this->template->show('','village',$data,false);
+		$this->session->set_userdata('current_village_id',$this->input->POST('villageid'));
+		$this->output->set_content_type("application/json")->set_output(json_encode(array('status'=>true, 'redirect'=>'/planit/village/load_village')));
+		return true;
         }
+
+	public function load_village(){
+		$data['page_title'] = 'Village';
+		$this->template->show('','village',$data,false);
+	}
 }

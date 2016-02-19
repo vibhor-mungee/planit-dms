@@ -1,6 +1,6 @@
 <?php
 
-class landing extends CI_Controller {
+class landing extends MY_Controller {
 
 
 

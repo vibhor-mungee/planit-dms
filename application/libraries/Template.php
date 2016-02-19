@@ -12,12 +12,14 @@ class Template
     {
         $this->CI =& get_instance();
         $this->CI->load->helper('url');
+	$this->CI->load->library('Tank_auth');
 
         // default CSS and JS that they must be load in any pages
 
         $this->addJS( base_url('assets/js/jquery.js'));
         $this->addJS( base_url('assets/js/lodash.min.js'));
         $this->addJS( base_url('assets/js/bootstrap.min.js'));
+	$this->addJS( base_url('assets/js/menu.js'));
         $this->addCSS( base_url('assets/css/bootstrap.min.css'));
         $this->addCSS( base_url('assets/css/font-awesome.min.css'));
         $this->addCSS( base_url('assets/css/main.css'));
@@ -34,17 +36,21 @@ class Template
             $this->data['page_var'] = $data;
             //$this->data = $data;
                
-            if ($side_menu) {
+            if ($this->CI->tank_auth->is_logged_in()) {
                 $this->addCSS(base_url('assets/css/side-menu.css'));
                 $this->data['side_menu'] = $this->CI->load->view('side_menu', $this->data, true);    
             }
-            else
-            $this->data['side_menu'] = '';
-            $this->load_JS_and_css();
+	    else{
+		$this->data['side_menu'] = '';
+	    }
+	    $this->load_JS_and_css();
             $this->init_menu();
             $this->data['menu'] = $this->CI->load->view('menu.php', $this->data, true); 
 
             $this->data['content'] = $this->CI->load->view($folder.'/'.$page.'.php', $data, true);
+	    if($this->CI->tank_auth->is_logged_in()){
+		$this->data['side_menu'] = $this->CI->load->view('side_menu.php', $this->data, true);	
+	    }
             $this->CI->load->view('template.php', $this->data);
         }
     }

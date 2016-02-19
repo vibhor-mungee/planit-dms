@@ -1,64 +1,38 @@
-<div class="nav-side-menu">
-    <div class="brand">Plan-IT DMS</div>
-    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-  
-        <div class="menu-list">
-  
-            <ul id="menu-content" class="menu-content collapse out">
-                <li>
-                  <a href="#">
-                  <i class="fa fa-dashboard fa-lg"></i> Village
-                  </a>
-                </li>
-
-                <li  data-toggle="collapse" data-target="#products" class="collapsed active">
-                  <a href="#"><i class="fa fa-gift fa-lg"></i> Demographic Data <span class="arrow"></span></a>
-                </li>
-                <ul class="sub-menu collapse" id="products">
-                    <li class="active"><a href="#">CSS3 Animation</a></li>
-                    <li><a href="#">General</a></li>
-                    <li><a href="#">Buttons</a></li>
-                    <li><a href="#">Tabs & Accordions</a></li>
-                    <li><a href="#">Typography</a></li>
-                    <li><a href="#">FontAwesome</a></li>
-                    <li><a href="#">Slider</a></li>
-                    <li><a href="#">Panels</a></li>
-                    <li><a href="#">Widgets</a></li>
-                    <li><a href="#">Bootstrap Model</a></li>
-                </ul>
-
-
-                <li data-toggle="collapse" data-target="#service" class="collapsed">
-                  <a href="#"><i class="fa fa-globe fa-lg"></i> Topographical Data <span class="arrow"></span></a>
-                </li>  
-                <ul class="sub-menu collapse" id="service">
-                  <li>New Service 1</li>
-                  <li>New Service 2</li>
-                  <li>New Service 3</li>
-                </ul>
-
-
-                <li data-toggle="collapse" data-target="#new" class="collapsed">
-                  <a href="#"><i class="fa fa-car fa-lg"></i> Climatic Data <span class="arrow"></span></a>
-                </li>
-                <ul class="sub-menu collapse" id="new">
-                  <li>New New 1</li>
-                  <li>New New 2</li>
-                  <li>New New 3</li>
-                </ul>
-
-
-                 <li>
-                  <a href="#">
-                  <i class="fa fa-user fa-lg"></i> Household Data
-                  </a>
-                  </li>
-
-                 <li>
-                  <a href="#">
-                  <i class="fa fa-users fa-lg"></i> Education profile
-                  </a>
-                </li>
-            </ul>
-     </div>
+<div class="row">
+		<div class="col-sm-4 col-md-3 sidebar">
+    <div class="mini-submenu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </div>
+<div class="list-group">
+        <span href="#" class="list-group-item active">
+            <?php echo $data['village_name']; ?>
+            <span class="pull-right" id="slide-submenu">
+                <i class="fa fa-times"></i>
+            </span>
+        </span>
+        <a href="#" class="list-group-item">
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Demographic data
+        </a>
+        <a href="#" class="list-group-item">
+            <i class="fa fa-search"></i> Land Use Data
+        </a>
+        <a href="#" class="list-group-item">
+            <i class="fa fa-user"></i> Social and Physical Infrastructure
+        </a>
+        <a href="#" class="list-group-item">
+            <i class="fa fa-folder-open-o"></i> Natural resources & Geographical Conditions 
+        </a>
+        <a href="#" class="list-group-item">
+            <i class="fa fa-bar-chart-o"></i> Institutions 
+        </a>
+        <a href="#" class="list-group-item">
+            <i class="fa fa-envelope"></i> Issues
+        </a>
+        <a href="#" class="list-group-item">
+            <i class="fa fa-envelope"></i> Schemes
+        </a>
+    </div>    
 </div>
+</div>    

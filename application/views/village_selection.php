@@ -59,6 +59,7 @@
                                 </div>
                         </div>
                 </div>
+		<div class="row" id="submit_row" style="width: 0%; margin: auto;margin-top:20px;" id="show_id"></div>
                 <div class="row" id="submit_row" style="width: 0%; margin: auto;margin-top:20px;">
                                 <button id="submit" type="button" class="btn btn-default btn-sm" disabled="disabled"><span class="glyphicon glyphicon-triangle-right"></span> Submit</button>
                 </div>

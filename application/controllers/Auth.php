@@ -584,6 +584,19 @@ class Auth extends CI_Controller
 		return TRUE;
 	}
 
+
+	/**
+	* Check if the user is logged in to the system.
+	*
+	* @return     bool
+	**/
+	function check_login_status()
+	{
+		if ($this->tank_auth->is_logged_in()) { 
+			echo TRUE;
+		}
+		echo FALSE;
+	}
 }
 
 /* End of file auth.php */
